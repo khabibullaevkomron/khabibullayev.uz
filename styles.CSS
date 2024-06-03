@@ -1,0 +1,396 @@
+/* General body styling */
+body {
+  font-family: Algerian, sans-serif;
+  margin: 15pt 10pt 25pt 20pt;
+  padding: 20pt;
+  bg-color: black;
+}
+
+/* Header styling */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: white;
+  color: #007A00;
+  padding: 20px;
+  border: 16px;
+  transition: background-color 0.7s ease;
+}
+
+header.top {
+  background-color: white;
+  color: #5586E1;
+}
+
+header.scrolled {
+  background-color: #5586E1;
+  color: white;
+}
+
+.title {
+  margin: 0;
+}
+
+nav {
+  display: flex;
+}
+
+.navbar{
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-right: 40px;
+margin-left: 30px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+ }
+
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links a, .nav-links button {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease; scale 1.4;
+}
+
+.nav-links a:hover, .nav-links button:hover {
+  color: #85ffff;
+}
+
+hr {
+  height: 40px;
+  width: 100%;
+}
+
+/* Main content styling */
+main {
+  padding: 20px;
+}
+
+/* Footer styling */
+footer {
+  background: radial-gradient(#272727, #1b1b1b);
+  color: #41E83C;
+  padding: 5px;
+  text-align: center;
+  border: 0;
+  border-radius: 56px;
+}
+
+/* Button styling */
+.button {
+  background-color: #0078d0;
+  border: 0;
+  border-radius: 56px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: system-ui, -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  outline: 0;
+  padding: 16px 21px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-top: 10px;
+}
+
+.button:before {
+  background-color: initial;
+  background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+  border-radius: 125px;
+  content: "";
+  height: 50%;
+  left: 4%;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  transition: all 0.3s;
+  width: 92%;
+}
+
+.button:hover {
+ box-shadow: rgba(255, 255, 255, 0.2) 0 3px 15px inset, rgba(0, 0, 0, 0.1) 0 3px 5px, rgba(0, 0, 0, 0.1) 0 10px 13px;
+  transform: scale(0.85);
+}
+
+/* Button padding adjustment for larger screens */
+@media (min-width: 768px) {
+  .button {
+    padding: 16px 48px;
+  }
+}
+
+/* Tic-Tac-Toe game styling */
+.game-container {
+  display: flex;
+    justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.game-board {
+    display: flex;
+  flex-direction: column;
+  align-items: left;
+
+}
+
+.notifications {
+  text-align: center;
+  font-size: 20em; /* Adjust as needed */
+}
+
+.restart-button {
+  padding: 20px 40px;
+  background-color: #0078d0;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 5px;
+  font-size: 2.5em; /* Adjust as needed */
+}
+
+.restart-button:hover {
+  background-color: #005fa3;
+}
+
+.row {
+  display: flex;
+}
+.cell {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  font-size: 2em;
+  text-align: center;
+  line-height: 100px;
+  border: 2px solid #0078d0;
+  background-color: #00FAD4;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.cell:before, .cell:after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  border: 2px solid #0078d0;
+  box-sizing: border-box;
+  z-index: -1;
+  transition: all 0.3s;
+}
+
+.cell:hover {
+  color: #0078d0;
+  text-shadow: 0 0 8px #0078d0, 0 0 16px #0078d0, 0 0 24px #0078d0, 0 0 32px #0078d0;
+}
+
+.cell:hover:before, .cell:hover:after {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  box-shadow: 0 0 8px #0078d0, 0 0 16px #0078d0, 0 0 24px #0078d0, 0 0 32px #0078d0;
+}
+
+
+.button-89 {
+  align-items: center;
+  appearance: none;
+  background-color: #0078d0;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  justify-content: center;
+  line-height: 1.2;
+  padding: 14px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .05s ease-in-out, transform .05s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+}
+
+.button-89:hover,
+.button-89:focus {
+  background-color: #0064bd;
+}
+
+.button-89:focus {
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1),
+              0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.button-89:active {
+  background-color: #005cbf;
+  transform: translateY(2px);
+}
+
+/* CSS */
+.button-64 {
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.button-64:active,
+.button-64:hover {
+  outline: 0;
+}
+
+.button-64 span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.button-64:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+  .button-64 {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
+
+.boshlash{
+width: 100%}
+
+
+
+/* Gold gradient text effect */
+  :root {
+    --gold: #ffb338;
+    --light-shadow: #77571d;
+    --dark-shadow: #3e2904;
+  }
+
+  body {
+    margin: 0;
+    }
+
+.wrapper {
+    background: radial-gradient(#272727, #1b1b1b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-transform: uppercase;
+    position: relative;
+    border-radius: 20px;
+  
+  }
+  .bg, .fg {
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: clamp(2em, 12vw, 10rem);
+    letter-spacing: 1px;
+    -webkit-text-stroke: 4px transparent;
+    position: absolute;
+    transform: scale(1);
+  }
+
+  .bg {
+    background-image: repeating-linear-gradient(105deg, var(--gold) 0%, var(--dark-shadow) 5%, var(--gold) 12%);
+    color: transparent;
+    filter: drop-shadow(5px 15px 15px black);
+    transform: scaleY(1.05);
+    transform-origin: top;
+  }
+
+  .fg {
+    background-image: repeating-linear-gradient(5deg, var(--gold) 0%, var(--light-shadow) 23%, var(--gold) 31%);
+    color: #1e2127;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .top-right {
+    bottom: 0;
+    right: 0;
+    font-size: 3rem;
+    padding: 20px;
+  }
+
+/* Add this to your existing styles.css */
+
+/* Keyframes for fade effect */
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Fade effect class */
+.fade {
+  animation: fade 0.9s ease-in-out;
+}
